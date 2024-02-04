@@ -8,3 +8,4 @@ however A new can register his profile under specific authentication protocols, 
 Home, profile, Signout, Trending are some of the pages made to make web page more realistic and interactive.
 User based profile information are demonstrated throughout the project.
 All necessary packages are already installed making a easy fork and use.
+It is best advised to use python versions py 3.9+ to avoid any compatibility issues.
