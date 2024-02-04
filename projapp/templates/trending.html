@@ -1,0 +1,181 @@
+{% extends "dashboard.html" %}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Website</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 250px;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .profile h4 {
+            margin: 0;
+        }
+
+        .main {
+            margin-left: 270px;
+            padding: 20px;
+        }
+
+        .card {
+            margin-bottom: 20px;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+        }
+
+        .card-header img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .card-body {
+            padding-top: 0;
+        }
+
+        .card-text {
+            margin-bottom: 10px;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-footer a {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="sidebar" style="position: fixed; top: 55; left: 0; height: 100%; width: 250px; background-color: #f8f9fa; padding: 20px;">
+        <div class="profile">
+            <img src="profile.jpg" alt="Profile Picture">
+            <h4>John Doe</h4>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item active">Home</li>
+            <li class="list-group-item">Messages</li>
+            <li class="list-group-item">Notifications</li>
+            <li class="list-group-item">Settings</li>
+            <li class="list-group-item">Logout</li>
+        </ul>
+    </div>
+    
+    <div class="main" style="margin-left: 270px; padding: 20px; margin-top: 60px;">
+        <h1>Trending Topics</h1>
+        <div class="row">
+            
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <img src="user1.jpg" alt="User 1">
+                        <h5 class="card-title">User 1</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis eros malesuada sagittis.</p>
+                        <p class="card-text"><span class="badge badge-primary">#hashtag1</span> <span class="badge badge-primary">#hashtag2</span></p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#">Like</a>
+                        <a href="#">Comment</a>
+                        <a href="#">Share</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <img src="user2.jpg" alt="User 2">
+                        <h5 class="card-title">User 2</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque id nisi at lacus aliquet lacinia.</p>
+                        <p class="card-text"><span class="badge badge-primary">#hashtag3</span> <span class="badge badge-primary">#hashtag4</span></p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#">Like</a>
+                        <a href="#">Comment</a>
+                        <a href="#">Share</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <img src="user3.jpg" alt="User 3">
+                        <h5 class="card-title">User 3</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Phasellus quis nisl vitae augue tincidunt tincidunt. Fusce auctor nunc quis nisi sagittis, ac tincidunt lorem condimentum.</p>
+                        <p class="card-text"><span class="badge badge-primary">#hashtag5</span> <span class="badge badge-primary">#hashtag6</span></p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#">Like</a>
+                        <a href="#">Comment</a>
+                        <a href="#">Share</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <img src="user4.jpg" alt="User 4">
+                        <h5 class="card-title">User 4</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Curabitur euismod sem sit amet nisl blandit, id consequat leo ullamcorper. Morbi quis neque et elit luctus euismod.</p>
+                        <p class="card-text"><span class="badge badge-primary">#hashtag7</span> <span class="badge badge-primary">#hashtag8</span></p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#">Like</a>
+                        <a href="#">Comment</a>
+                        <a href="#">Share</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+{% endblock content %}

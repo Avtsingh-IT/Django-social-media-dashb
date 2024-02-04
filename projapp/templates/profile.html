@@ -1,0 +1,129 @@
+
+{% extends "dashboard.html" %}
+{% block extra %}
+{% endblock extra %}
+
+{% block content %}
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <style>
+      /* Center everything */
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 60px;
+      }
+
+      /* Make profile photo round */
+      .img-fluid {
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          
+          <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?cs=srgb&dl=pexels-italo-melo-2379005.jpg&fm=jpg" alt="Profile Picture" width="150" height="150">
+          
+          <h3 class="mt-3">{{ request.user.username|title }}</h3>
+          
+          <p class="text-muted">About me</p>
+          
+          <div class="d-flex justify-content-around">
+            <div>
+              <h5>Followers</h5>
+              <p class="text-primary">123</p>
+            </div>
+            <div>
+              <h5>Following</h5>
+              <p class="text-primary">456</p>
+            </div>
+            <div>
+              <h5>Posts</h5>
+              <p class="text-primary">789</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          
+          <h4 class="mb-3">Settings</h4>
+          <div class="list-group">
+            
+            <a href="#" class="list-group-item list-group-item-action">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Two factor authentication</h5>
+                <small class="text-success">Enabled</small>
+              </div>
+              <p class="mb-1">Protect your account with an extra layer of security.</p>
+            </a>
+           
+            <a href="#" class="list-group-item list-group-item-action">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Change password</h5>
+                <small class="text-muted">Last changed 3 months ago</small>
+              </div>
+              <p class="mb-1">Update your password regularly to keep your account secure.</p>
+            </a>
+            
+            <a href="#" class="list-group-item list-group-item-action">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Activity status</h5>
+                <small class="text-primary">Online</small>
+              </div>
+              <p class="mb-1">Show your online presence to your friends and contacts.</p>
+            </a>
+            
+            <a href="#" class="list-group-item list-group-item-action">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">About page</h5>
+                <small class="text-info">View</small>
+              </div>
+              <p class="mb-1">Learn more about this website and its features.</p>
+            </a>
+            
+            <a href="#" class="list-group-item list-group-item-action">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Contact support</h5>
+                <small class="text-warning">Help</small>
+              </div>
+              <p class="mb-1">Get in touch with our friendly and helpful support team.</p>
+            </a>
+            
+            <a href="#" class="list-group-item list-group-item-action">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Status</h5>
+                <small class="text-secondary">Edit</small>
+              </div>
+              <p class="mb-1">Share your thoughts and feelings with your followers.</p>
+            </a>
+            
+            <a href="#" class="list-group-item list-group-item-action">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">More options</h5>
+                <small class="text-dark">Expand</small>
+              </div>
+              <p class="mb-1">Access more features and settings for your profile.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+
+  </html>
+{% endblock content %}
