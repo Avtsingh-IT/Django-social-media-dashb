@@ -19,12 +19,16 @@ from django.urls import path, include
 
 from django.views.generic import TemplateView
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('projapp.urls')),
     
     path('', include('projapp.urls')),
     path("accounts/",include("allauth.urls"))
-    # path('dashboard/', dashboard.html, name='dashboard')
     
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -7,6 +7,10 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate
 from pprint import pprint
 from .middleware import auth, guest, autha
+from .models import UploadedImage
+from .forms import UploadImageForm
+
+
 
 
 @guest
@@ -57,14 +61,43 @@ def login_view(request):
         initial_data = {'username':'', 'password':''}
         form = AuthenticationForm(initial=initial_data)
     return render(request, 'auth/login.html', {'form': form})
+
     
 @auth
 def dashboard_view(request):
+    images = UploadedImage.objects.all()
     
-    return render(request, 'dashboard.html')
+    # Pass the images to the template context
+    context = {'images': images}
+    
+    return render(request, 'dashboard.html', context)
     
 
 def logout_view(request):
     logout(request)
     return redirect('login')
-    
+
+
+
+
+
+def image_list(request):
+    images = UploadedImage.objects.all()
+    return render(request, 'image_list.html', {'images': images})
+
+def upload_image(request):
+    if request.method == 'POST':
+        print(request.POST)
+        form = UploadImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return render(request, 'image_list', {'form': form})
+
+    else:
+        form = UploadImageForm()
+
+    return render(request, 'upload_image.html', {'form': form})
+
+def image_list(request):
+    images = UploadedImage.objects.all()
+    return render(request, 'image_list.html', {'images': images})

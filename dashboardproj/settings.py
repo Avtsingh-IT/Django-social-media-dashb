@@ -109,6 +109,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -121,7 +122,7 @@ ROOT_URLCONF = 'dashboardproj.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [BASE_DIR / 'projapp'/'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -191,6 +192,9 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
 
 
 
@@ -216,3 +220,5 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 SOCIAL_AUTH_GITHUB_KEY = 'ed6b95c71e5f2b9152af'
 SOCIAL_AUTH_GITHUB_SECRET = '99b45a5a61643db2d436d3b4ec5be9bbfc5df969'
+
+SOCIAL_AUTH_GITHUB_REDIRECT_URI = 'http://localhost:8000/accounts/github/login/callback/'
